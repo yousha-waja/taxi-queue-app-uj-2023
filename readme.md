@@ -50,9 +50,9 @@ Fork and clone this repo.
 ## Send links for review
 
 * Planning: Send your Problem Solving Template and Kanban Board by 10:30 (they should be mostly complete; and you can still update them after this) 
-	* Problem Solving Template: https://docs.google.com/document/d/1LwuNMhYG88aA5OsvNQRccxpmLz7JmfUOPUTEa1PNLX8/copy
-	* Complete this form to send your PLANNING links: https://docs.google.com/forms/d/e/1FAIpQLScvytVS_p_Y7ZZ3gXwo9JAhwGlS_X95oMlZu13o9FQdATZLpA/viewform
+	* Problem Solving Template: <a href="https://docs.google.com/document/d/1LwuNMhYG88aA5OsvNQRccxpmLz7JmfUOPUTEa1PNLX8/copy" target="_blank">Problem Solving Template</a>
+	* Complete this form to send your <a href="https://docs.google.com/forms/d/e/1FAIpQLScvytVS_p_Y7ZZ3gXwo9JAhwGlS_X95oMlZu13o9FQdATZLpA/viewform" target="_blank">PLANNING links</a>
 * Github Repo & Deployed Apps: 
-	* Complete this form to send your GITHUB links: https://docs.google.com/forms/d/e/1FAIpQLScf6UGysuph5wz_ZAtJXcqlQoQfuOdOpH_vdsbZmyMKQF5aPg/viewform
+	* Complete this form to send your <a href="https://docs.google.com/forms/d/e/1FAIpQLScf6UGysuph5wz_ZAtJXcqlQoQfuOdOpH_vdsbZmyMKQF5aPg/viewform" target="_blank">GITHUB Links</a>
 	
 And make sure you submit your final links by latest **16h00** on **30 May 2022**.
