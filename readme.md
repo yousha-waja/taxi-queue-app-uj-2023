@@ -51,7 +51,7 @@ Fork and clone this repo.
 
 * Planning: Send your Problem Solving Template and Kanban Board by 10:30 (they should be mostly complete; and you can still update them after this) 
 	* Problem Solving Template: <a href="https://docs.google.com/document/d/1LwuNMhYG88aA5OsvNQRccxpmLz7JmfUOPUTEa1PNLX8/copy" target="_blank">Problem Solving Template</a>
-	* Complete this form to send your <a href="https://docs.google.com/forms/d/e/1FAIpQLScvytVS_p_Y7ZZ3gXwo9JAhwGlS_X95oMlZu13o9FQdATZLpA/viewform" target="_">PLANNING links</a>
+	* Complete this form to send your <a href="https://docs.google.com/forms/d/e/1FAIpQLScvytVS_p_Y7ZZ3gXwo9JAhwGlS_X95oMlZu13o9FQdATZLpA/viewform"  target="popup" rel="nofollow">PLANNING links</a>
 * Github Repo & Deployed Apps: 
 	* Complete this form to send your <a href="https://docs.google.com/forms/d/e/1FAIpQLScf6UGysuph5wz_ZAtJXcqlQoQfuOdOpH_vdsbZmyMKQF5aPg/viewform" target="_blank">GITHUB Links</a>
 	
