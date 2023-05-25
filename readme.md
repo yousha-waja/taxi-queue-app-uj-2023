@@ -47,12 +47,17 @@ Add a unit test/s to show that your Factory Function's constructor can initializ
 
 Fork and clone this repo.
 
-## Send links for review
+## Work submission
 
-* Planning: Send your Problem Solving Template and Kanban Board by 10:30 (they should be mostly complete; and you can still update them after this) 
-	* Problem Solving Template: <a href="https://docs.google.com/document/d/1LwuNMhYG88aA5OsvNQRccxpmLz7JmfUOPUTEa1PNLX8/copy" target="_blank">Problem Solving Template</a>
-	* Complete this form to send your <a href="https://docs.google.com/forms/d/e/1FAIpQLScvytVS_p_Y7ZZ3gXwo9JAhwGlS_X95oMlZu13o9FQdATZLpA/viewform"  target="popup" rel="nofollow">PLANNING links</a>
-* Github Repo & Deployed Apps: 
-	* Complete this form to send your <a href="https://docs.google.com/forms/d/e/1FAIpQLScf6UGysuph5wz_ZAtJXcqlQoQfuOdOpH_vdsbZmyMKQF5aPg/viewform" target="_blank">GITHUB Links</a>
+Check your EMAIL for the links to submit your GitHub Pages URL and the URL to your GitHub repository on feedback.projectcodex.co.
+Loadshedding
+
+If you are working remotely and you are experiencing load shedding please let us know in advance.
+Planning
+
+Spend the first 30 minutes of your assessment on planning. Read through all the different scenarios & create a Kanban Board with the tasks you think you need to complete. Email a link to your Kanban board to mentors@projectcodex.co. Create pseudo code using code comments to help you think through what you need to do.
+Ask for help
+
+Ask if you need help or clarity
 	
-And make sure you submit your final links by latest **16h00** on **30 May 2022**.
+And make sure you submit your final links by latest **16h00**.
