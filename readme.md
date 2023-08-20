@@ -31,31 +31,39 @@ The widget should keep track off:
 
 ## Instructions
 
-* Make all the unit tests pass in `taxi-queue.test.js`. Run the tests from `test/index.html`.
-* HTML & CSS for this widget in `index.html`
-* Some failing unit tests that you need to stop failing by implementing the TaxiQueue Factory Function in `taxi-queue.js`. Don't change the test file `test/taxi-queue.test.js`
-* A Factory function skeleton is in the `taxi-queue.js` file.
-* Implement the DOM functionality in the `taxi-queue.dom.js` file.
+There are 2 versions of the Taxi Queue Widget - one with *no API* and the other *with an API*.
 
-## Add localStorage
+### No API
 
-Once your widget is done store all the queue counters in localStorage be sure that the data is shown correctly after a refresh.
-### Add a unit test for localStorage
-Add a unit test/s to show that your Factory Function's constructor can initialize the people and taxi queue count.
+First make the widget function in the `public/no-api` folder functional  - make changes in the `taxi-queue.no-api.js.js` & `index.html file`
+
+### With an API
+
+* Next work on the widget in the `public/with-api` folder.
+* Make all the unit tests pass in `taxi-queue.test.js`. Run the tests using `npm test`. 
+* **Don't change** the test file `test/taxi-queue.test.js`.
+
+* Implement the required API endpoints in the `index.js` file
+* Implement the required sql code in the `taxi.sql.js` file
+* Make sure the widgets data is not lost after a browser refresh.
+
 
 ## For & clone
 
 Fork and clone this repo.
+Commit you changes to GitHub regularly.
+
+## Deploy
+
+Deploy your app the [Render](render.com)
 
 ## Work submission
 
-Check your EMAIL for the links to submit your GitHub Pages URL and the URL to your GitHub repository on feedback.projectcodex.co.
-Loadshedding
+Check your Email for the links to submit your App URL and the URL to your GitHub repository on feedback.projectcodex.co.
 
-If you are working remotely and you are experiencing load shedding please let us know in advance.
-Planning
 
-Spend the first 30 minutes of your assessment on planning. Read through all the different scenarios & create a Kanban Board with the tasks you think you need to complete. Email a link to your Kanban board to mentors@projectcodex.co. Create pseudo code using code comments to help you think through what you need to do.
+
+Spend the first 30 minutes of your assessment on planning. Read through all the different scenarios & create a Kanban Board with the tasks you think you need to complete. Email a link to your Kanban board to `uj-mentors@projectcodex.co`. Create pseudo code using code comments to help you think through what you need to do.
 Ask for help
 
 Ask if you need help or clarity
