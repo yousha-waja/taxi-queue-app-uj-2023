@@ -39,15 +39,16 @@ app.post('/api/taxi/depart', (req, res) => {
 
 // return the number of people in the queue
 app.get('/api/passenger/queue', (req, res) => {
+    //  return test the API call
     res.json({
-        queue_count : 'peopl in queue'
+        queueCount : 7
     })
 });
 
 // return the number of people in the queue
 app.get('/api/taxi/queue', (req, res) => {
     res.json({
-        queue_count : 'taxis in queue'
+        queueCount : 0
     })
 });
 

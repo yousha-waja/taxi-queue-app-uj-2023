@@ -33,9 +33,39 @@ The widget should keep track off:
 
 There are 2 versions of the Taxi Queue Widget - one with *no API* and the other *with an API*.
 
+Fork and clone this repo in your projects folder.
+
+```
+git clone https://github.com/codex-academy/taxi-queue-app-uj-2023
+```
+
+Next install the project dependencies:
+
+```
+npm install
+```
+
+Run the app using this command:
+
+```
+npm run dev
+```
+
+Open the app in a browser using: 
+
+```
+http://localhost:3015
+```
+
 ### No API
 
-First make the widget function in the `public/no-api` folder functional  - make changes in the `taxi-queue.no-api.js.js` & `index.html file`
+First make the widget function in the `public/no-api` folder functional.
+
+Make changes in the `taxi-queue.no-api.js.js` & `index.html file`
+
+That widget is not using an API and after a browser refresh application state will reset to 0.
+
+There are **no unit tests** for this widget.
 
 ### With an API
 
@@ -46,7 +76,7 @@ First make the widget function in the `public/no-api` folder functional  - make 
 * Implement the required API endpoints in the `index.js` file
 * Implement the required sql code in the `taxi.sql.js` file
 * Make sure the widgets data is not lost after a browser refresh.
-
+* Use `axios` to call the API end points from `AlpineJS`.
 
 ## For & clone
 
@@ -55,12 +85,11 @@ Commit you changes to GitHub regularly.
 
 ## Deploy
 
-Deploy your app the [Render](render.com)
+Deploy your app the [Render](render.com) - share the deployed URL in the feedback system.
 
 ## Work submission
 
-Check your Email for the links to submit your App URL and the URL to your GitHub repository on feedback.projectcodex.co.
-
+Check your Email for the links to submit your App URL (render.com) and the URL to your GitHub repository on feedback.projectcodex.co.
 
 
 Spend the first 30 minutes of your assessment on planning. Read through all the different scenarios & create a Kanban Board with the tasks you think you need to complete. Email a link to your Kanban board to `uj-mentors@projectcodex.co`. Create pseudo code using code comments to help you think through what you need to do.
