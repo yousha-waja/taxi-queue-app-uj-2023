@@ -36,9 +36,12 @@ Please **read through all** the instructions before starting to code.
 
 Spend the **first 30 minutes** of your Solo Code session on planning. Create a Kanban board. Email a link of it to `uj-mentors@projectcodex.co`
 
-There are 2 versions of the Taxi Queue Widget - one with *no API* and the other *with an API*.
+You need to create **2 versions** of the Taxi Queue Widget:
 
-You need to to do both. **But do the one without the API first.**
+* one with *no API* - use the `public/no-api` folder.
+* and the other *with an API* - use the `public/with-api` folder.
+
+**Create the no API widget first.**
 
 Use `RestClient` to test your API endpoints - add the `.http` you use to git & push it to GitHub.
 
@@ -99,7 +102,7 @@ Next work on the widget in the `public/with-api` folder. This widget should use 
 * Make sure the widgets data is not lost after a browser refresh.
 * Use `axios` to call the API end points from `AlpineJS`.
 
-## For & clone
+## Fork & clone
 
 Fork and clone this repo.
 Commit you changes to GitHub regularly.
