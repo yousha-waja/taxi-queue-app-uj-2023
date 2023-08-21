@@ -10,36 +10,36 @@ document.addEventListener('alpine:init', () => {
 			showError:false,
 			init() {
 				axios
-					.get('https://taxi-queue-app-uj-2023.onrender.com/api/passenger/queue')
+					.get('/api/passenger/queue')
 					.then(result => {
 						// an example API call
 						this.queueLength = result.data.queueCount.passenger_queue_count;
 					});
 				axios
-				    .get('https://taxi-queue-app-uj-2023.onrender.com/api/taxi/queue')
+				    .get('/api/taxi/queue')
 				    .then((result)=>{
 			     	 	this.taxiQueueLength = result.data.queueCount.taxi_queue_count;
 				    });
 			},
 			join(){
-				axios.post('https://taxi-queue-app-uj-2023.onrender.com/api/passenger/join').then((result)=>{
+				axios.post('/api/passenger/join').then((result)=>{
 					this.queueLength = result.data.queue.passenger_queue_count;
 				})
 			},
 			leave(){
 				if(this.queueLength>0){
-				axios.post('https://taxi-queue-app-uj-2023.onrender.com/api/passenger/leave').then((result)=>{
+				axios.post('/api/passenger/leave').then((result)=>{
 					this.queueLength = result.data.queue.passenger_queue_count;
 				})}
 			},
 			taxiJoin(){
-				axios.post('https://taxi-queue-app-uj-2023.onrender.com/api/taxi/join').then((result)=>{
+				axios.post('/api/taxi/join').then((result)=>{
 					this.taxiQueueLength = result.data.queue.taxi_queue_count;
 				})
 			},
 			taxiDepart(){
 				if(this.queueLength > 11 ){
-					axios.post('https://taxi-queue-app-uj-2023.onrender.com/api/taxi/depart').then((result)=>{
+					axios.post('/api/taxi/depart').then((result)=>{
 						this.taxiQueueLength = result.data.queue.taxi_queue_count;
 						this.queueLength = result.data.queue.passenger_queue_count;
 					})
