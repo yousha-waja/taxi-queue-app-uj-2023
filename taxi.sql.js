@@ -8,6 +8,9 @@ const  db = await sqlite.open({
 
 await db.migrate();
 
+
+console.log("taxi.sql.js running...")
+
 export async function joinQueue() {
     await db.run('update taxi_queue set passenger_queue_count = passenger_queue_count +1 ;');
     const queue = await db.get('select passenger_queue_count from taxi_queue');
