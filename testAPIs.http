@@ -18,12 +18,3 @@ Content-Type: application/json
 ### taxi depart
 POST http://localhost:3011/api/taxi/depart
 Content-Type: application/json
-
-
-### add taxi to queue
-POST https://taxi-queue-app-uj-2023.onrender.com/api/taxi/join
-Content-Type: application/json
-
-### get queue length
-
-GET https://taxi-queue-app-uj-2023.onrender.com/api/passenger/queue
