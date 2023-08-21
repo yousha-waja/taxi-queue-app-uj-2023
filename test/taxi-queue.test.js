@@ -1,6 +1,8 @@
 
 import assert from 'assert';
-import {joinQueue, queueLength, leaveQueue, joinTaxiQueue, taxiQueueLength} from '../taxi.sql.js'
+import {joinQueue, queueLength, 
+		leaveQueue, joinTaxiQueue, 
+		taxiQueueLength} from '../taxi.sql.js'
 
 import * as sqlite from 'sqlite';
 import sqlite3 from 'sqlite3';
@@ -14,9 +16,9 @@ await db.migrate();
 
 describe('The taxi queue app', function() {
 
-	this.beforeEach(() => {
+	this.beforeEach(async () => {
 		//
-		db.exec(`update taxi_qeueu set passenger_queue_count = 0, taxi_queue_count = 0`)
+		await db.exec(`update taxi_queue set passenger_queue_count = 0, taxi_queue_count = 0`)
 	})
 
 	it ('should allow people to join the queue', async function() {
@@ -55,7 +57,7 @@ describe('The taxi queue app', function() {
 		await leaveQueue();
 		await leaveQueue();
 
-		assert.equal(0, queueLength());
+		assert.equal(0, await queueLength());
 
 	});
 
@@ -95,7 +97,7 @@ describe('The taxi queue app', function() {
 		assert.equal(3, await taxiQueueLength());
 		assert.equal(15, await queueLength());
 
-		await taxiQueue.taxiDepart();
+		await taxiDepart();
 
 		// data after a taxi departed
 		assert.equal(2, await taxiQueueLength());

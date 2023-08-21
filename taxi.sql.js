@@ -8,27 +8,27 @@ const  db = await sqlite.open({
 
 await db.migrate();
 
-
-export function joinQueue() {
-    console.log('join queue')
-}
-
-export function leaveQueue() {
+export async function joinQueue() {
+    // console.log('join queue')
 
 }
 
-export function joinTaxiQueue() {
+export async function leaveQueue() {
+    
+}
+
+export async function joinTaxiQueue() {
+   
+}
+
+export async function queueLength() {
+       
+}
+
+export async function taxiQueueLength() {
 
 }
 
-export function queueLength() {
-
-}
-
-export function taxiQueueLength() {
-
-}
-
-export function taxiDepart(){
+export function taxiDepart() {
 
 }
