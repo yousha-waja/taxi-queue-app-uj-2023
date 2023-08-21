@@ -1,5 +1,6 @@
 import express from "express";
 
+// use the SQL methods in the API routes below
 import {joinQueue} from './taxi.sql.js';
 
 const app = express();
@@ -7,6 +8,7 @@ const app = express();
 app.use(express.static('public'))
 
 // add middleware to make post routes work
+app.use(express.json());
 
 const PORT = process.env.PORT || 4015;
 
@@ -30,6 +32,7 @@ app.post('/api/taxi/join', (req, res) => {
     })
 });
 
+// Note there needs to be at least 12 people in the queue for the taxi to depart
 app.post('/api/taxi/depart', (req, res) => {
     res.json({
         message : 'taxi depart from queue'
@@ -45,7 +48,7 @@ app.get('/api/passenger/queue', (req, res) => {
     })
 });
 
-// return the number of people in the queue
+// return the number of taxis in the queue
 app.get('/api/taxi/queue', (req, res) => {
     res.json({
         queueCount : 0

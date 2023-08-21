@@ -11,9 +11,9 @@ A local taxi association needs some help to manage queues at some of their taxi 
 	<img src="minivan.png" alt="" width="100" style="display:inline-block">
 </span>
 
-They need a web widget which rank managers can use to keep track of how many people are joining and leaving taxi queues. They also want to keep track of how many taxis are queueing.
+They want a web app widget which rank managers can use to keep track of how many people are joining and leaving taxi queues. They also want to keep track of how many taxis are queueing.
 
-## Instructions
+## Required functionality
 
 The widget should keep track off:
 
@@ -34,11 +34,15 @@ Fork and clone this repo in your local `projects` folder.
 
 Please **read through all** the instructions before starting to code.
 
-Spend the **first 30 minutes** of your Solo Code session on planning. Create a Kanban board.
+Spend the **first 30 minutes** of your Solo Code session on planning. Create a Kanban board. Email a link of it to `uj-mentors@projectcodex.co`
 
 There are 2 versions of the Taxi Queue Widget - one with *no API* and the other *with an API*.
 
 You need to to do both. **But do the one without the API first.**
+
+Use `RestClient` to test your API endpoints - add the `.http` you use to git & push it to GitHub.
+
+The `migrations` folder contains the required database scripts and it creates a `taxi_queue` table with two columns `passenger_queue_count` and `taxi_queue_count`.
 
 ## Run the app locally
 
@@ -83,15 +87,15 @@ Link the HTML in `public/no-api/index.html` to the functions and variables you c
 
 ### With an API
 
-Next work on the widget in the `public/with-api` folder. 
-This widget should use an API that is using SQLite.
+Next work on the widget in the `public/with-api` folder. This widget should use an API that is using SQLite.
 
 * Make all the unit tests pass in `taxi-queue.test.js`. 
-* Run the tests using `npm test`. 
+* Run the tests using `npm test`. The unit tests will update the database as needed before each test is ran.
 * **Don't change** the test file `test/taxi-queue.test.js`.
 
 * Implement the required API endpoints in the `index.js` file.
-* Implement the required functions in the `taxi.sql.js` file.
+* Implement the required functions in the `taxi.sql.js` file. If all the test pass you implemented functions correctly.
+* Note you can start with the API if only some of the tests are passing.
 * Make sure the widgets data is not lost after a browser refresh.
 * Use `axios` to call the API end points from `AlpineJS`.
 
