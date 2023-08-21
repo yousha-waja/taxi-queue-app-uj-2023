@@ -2,7 +2,7 @@
 import assert from 'assert';
 import {joinQueue, queueLength, 
 		leaveQueue, joinTaxiQueue, 
-		taxiQueueLength} from '../taxi.sql.js'
+		taxiQueueLength, taxiDepart} from '../taxi.sql.js'
 
 import * as sqlite from 'sqlite';
 import sqlite3 from 'sqlite3';
@@ -28,8 +28,8 @@ describe('The taxi queue app', function() {
 		await joinQueue();
 		await joinQueue();
 		await joinQueue();
-
-		assert.equal(5, await queueLength());
+		const queueCount = await queueLength();
+		assert.equal(5, queueCount.passenger_queue_count);
 
 	});
 
@@ -41,7 +41,8 @@ describe('The taxi queue app', function() {
 		await leaveQueue();
 		await joinQueue();
 
-		assert.equal(1, await queueLength());
+		const queueCount = await queueLength();
+		assert.equal(1, queueCount.passenger_queue_count);
 
 	});
 
@@ -57,7 +58,8 @@ describe('The taxi queue app', function() {
 		await leaveQueue();
 		await leaveQueue();
 
-		assert.equal(0, await queueLength());
+		const queueCount = await taxiQueueLength();
+		assert.equal(0, queueCount.taxi_queue_count);
 
 	});
 
@@ -67,7 +69,8 @@ describe('The taxi queue app', function() {
 		await joinTaxiQueue();
 		await joinTaxiQueue();
 
-		assert.equal(3, await taxiQueueLength());
+		const queueCount = await taxiQueueLength();
+		assert.equal(3, queueCount.taxi_queue_count);
 
 	});
 
@@ -93,16 +96,21 @@ describe('The taxi queue app', function() {
 		await joinTaxiQueue();
 		await joinTaxiQueue();
 
-		// data before a taxi departs
-		assert.equal(3, await taxiQueueLength());
-		assert.equal(15, await queueLength());
+		const taxiQueueCountBefore = await taxiQueueLength();
+    const queueCountBefore = await queueLength();
 
-		await taxiDepart();
+    // data before a taxi departs
+    assert.equal(3, taxiQueueCountBefore.taxi_queue_count);
+    assert.equal(15, queueCountBefore.passenger_queue_count);
 
-		// data after a taxi departed
-		assert.equal(2, await taxiQueueLength());
-		assert.equal(3, await queueLength());
-		// assert.equal(2, taxiQueue.queueLength());
+    await taxiDepart();
+
+    const taxiQueueCountAfter = await taxiQueueLength();
+    const queueCountAfter = await queueLength();
+
+    // data after a taxi departed
+    assert.equal(2, taxiQueueCountAfter.taxi_queue_count);
+    assert.equal(3, queueCountAfter.passenger_queue_count);
 
 	});
 
@@ -124,16 +132,19 @@ describe('The taxi queue app', function() {
 		await joinTaxiQueue();
 		await joinTaxiQueue();
 
-		// data before a taxi departs
-		assert.equal(3, await taxiQueueLength());
-		assert.equal(11, await queueLength());
+		const taxiQueueCount = await taxiQueueLength();
+		const queueCount = await queueLength();
 
-		// this function call should do nothing as there is not enough passengers in the queue
-		taxiDepart();
+// data before a taxi departs
+assert.equal(3, taxiQueueCount.taxi_queue_count);
+assert.equal(11, queueCount.passenger_queue_count);
 
-		// data after a taxi departed
-		assert.equal(3, taxiQueueLength());
-		assert.equal(11, queueLength());
+await taxiDepart();
+
+// data after a taxi departed
+assert.equal(3, taxiQueueCount.taxi_queue_count);
+assert.equal(11, queueCount.passenger_queue_count);
+// assert.equal(2, taxiQueue.queueLength());
 
 	});
 
@@ -156,15 +167,21 @@ describe('The taxi queue app', function() {
 		await joinQueue(); 
 
 		// data before a taxi departs
-		assert.equal(0, await taxiQueueLength());
-		assert.equal(15, await queueLength());
+		const taxiQueueCountBefore = await taxiQueueLength();
+    const queueCountBefore = await queueLength();
 
-		// this function call should do nothing as there is no taxis in the taxi queue
-		taxiDepart();
-		
-		// data after a taxi departed
-		assert.equal(0,await queueLength());
-		assert.equal(15, await queueLength());
+    assert.equal(0, taxiQueueCountBefore.taxi_queue_count);
+    assert.equal(15, queueCountBefore.passenger_queue_count);
+
+    // this function call should do nothing as there are no taxis in the taxi queue
+    await taxiDepart();
+
+    // data after a taxi departed
+    const taxiQueueCountAfter = await taxiQueueLength();
+    const queueCountAfter = await queueLength();
+
+    assert.equal(0, taxiQueueCountAfter.taxi_queue_count);
+    assert.equal(15, queueCountAfter.passenger_queue_count);
 
 	});
 });
