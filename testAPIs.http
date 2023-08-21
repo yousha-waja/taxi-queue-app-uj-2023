@@ -1,0 +1,20 @@
+### get queue length
+
+GET http://localhost:3011/api/passenger/queue
+
+### add person to queue
+
+POST http://localhost:3011/api/passenger/join
+Content-Type: application/json
+
+### remove person from queue
+POST http://localhost:3011/api/passenger/leave
+Content-Type: application/json
+
+### add taxi to queue
+POST http://localhost:3011/api/taxi/join
+Content-Type: application/json
+
+### taxi depart
+POST http://localhost:3011/api/taxi/depart
+Content-Type: application/json

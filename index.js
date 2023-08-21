@@ -1,57 +1,66 @@
 import express from "express";
+import cors from 'cors';
 
 // use the SQL methods in the API routes below
-import {joinQueue} from './taxi.sql.js';
+import {queueLength, taxiQueueLength, joinQueue, leaveQueue, joinTaxiQueue, taxiDepart} from './taxi.sql.js';
 
 const app = express();
 
 app.use(express.static('public'))
-
+app.use(cors());
 // add middleware to make post routes work
 app.use(express.json());
 
-const PORT = process.env.PORT || 4015;
+const PORT = process.env.PORT || 3011;
 
 // passenger joins the queue
-app.post('/api/passenger/join', (req, res) => {
+app.post('/api/passenger/join', async (req, res) => {
+    let queue = await joinQueue();
     res.json({
-        message : 'join queue'
+        queue
     })
 })
 
 // passenger leaves the queue
-app.post('/api/passenger/leave', (req, res) => {
+app.post('/api/passenger/leave', async (req, res) => {
+    let queue = await leaveQueue();
     res.json({
-        message : 'leave queue'
+        queue
     })
 });
 
-app.post('/api/taxi/join', (req, res) => {
+//join taxi queue
+app.post('/api/taxi/join', async (req, res) => {
+    let queue = await joinTaxiQueue();
     res.json({
-        message : 'leave queue'
+        queue
     })
 });
 
 // Note there needs to be at least 12 people in the queue for the taxi to depart
-app.post('/api/taxi/depart', (req, res) => {
+app.post('/api/taxi/depart', async (req, res) => {
+    let queue = await taxiDepart();
     res.json({
-        message : 'taxi depart from queue'
+        message : 'taxi departed from queue',
+        queue
     })
 });
 
 
 // return the number of people in the queue
-app.get('/api/passenger/queue', (req, res) => {
+app.get('/api/passenger/queue', async (req, res) => {
     //  return test the API call
+    let queue = await queueLength();
     res.json({
-        queueCount : 7
+        queueCount : queue
     })
 });
 
 // return the number of taxis in the queue
-app.get('/api/taxi/queue', (req, res) => {
+app.get('/api/taxi/queue', async (req, res) => {
+    let queue = await taxiQueueLength();
     res.json({
-        queueCount : 0
+        queueCount : queue
     })
 });
 
