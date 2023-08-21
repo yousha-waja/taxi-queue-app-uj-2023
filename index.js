@@ -14,7 +14,7 @@ app.use(express.json());
 const PORT = process.env.PORT || 3011;
 
 // passenger joins the queue
-app.post('/api/passenger/join', async (req, res) => {
+app.post('https://taxi-queue-app-uj-2023.onrender.com/api/passenger/join', async (req, res) => {
     let queue = await joinQueue();
     res.json({
         queue
@@ -22,7 +22,7 @@ app.post('/api/passenger/join', async (req, res) => {
 })
 
 // passenger leaves the queue
-app.post('/api/passenger/leave', async (req, res) => {
+app.post('https://taxi-queue-app-uj-2023.onrender.com/api/passenger/leave', async (req, res) => {
     let queue = await leaveQueue();
     res.json({
         queue
@@ -30,7 +30,7 @@ app.post('/api/passenger/leave', async (req, res) => {
 });
 
 //join taxi queue
-app.post('/api/taxi/join', async (req, res) => {
+app.post('https://taxi-queue-app-uj-2023.onrender.com/api/taxi/join', async (req, res) => {
     let queue = await joinTaxiQueue();
     res.json({
         queue
@@ -38,7 +38,7 @@ app.post('/api/taxi/join', async (req, res) => {
 });
 
 // Note there needs to be at least 12 people in the queue for the taxi to depart
-app.post('/api/taxi/depart', async (req, res) => {
+app.post('https://taxi-queue-app-uj-2023.onrender.com/api/taxi/depart', async (req, res) => {
     let queue = await taxiDepart();
     res.json({
         message : 'taxi departed from queue',
@@ -48,7 +48,7 @@ app.post('/api/taxi/depart', async (req, res) => {
 
 
 // return the number of people in the queue
-app.get('/api/passenger/queue', async (req, res) => {
+app.get('https://taxi-queue-app-uj-2023.onrender.com/api/passenger/queue', async (req, res) => {
     //  return test the API call
     let queue = await queueLength();
     res.json({
@@ -57,7 +57,7 @@ app.get('/api/passenger/queue', async (req, res) => {
 });
 
 // return the number of taxis in the queue
-app.get('/api/taxi/queue', async (req, res) => {
+app.get('https://taxi-queue-app-uj-2023.onrender.com/api/taxi/queue', async (req, res) => {
     let queue = await taxiQueueLength();
     res.json({
         queueCount : queue
